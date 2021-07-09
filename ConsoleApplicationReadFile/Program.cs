@@ -10,21 +10,15 @@ namespace ConsoleApplicationReadFile
     {
         static void Main(string[] args)
         {
-            // The files used in this example are created in the topic
-            // How to: Write to a Text File. You can change the path and
-            // file name to substitute text files of your own.
-
-            // Example #1
             // Read the file as one string.
-            string text = System.IO.File.ReadAllText(@"C:\TestFolder\WriteText.txt");
+            string text = System.IO.File.ReadAllText(@"C:\TestFolderTXTReader\WriteText.txt");
 
-            // Display the file contents to the console. Variable text is a string.
+            // Display the file contents to the console.
             System.Console.WriteLine("Contents of WriteText.txt = {0}", text);
 
-            // Example #2
-            // Read each line of the file into a string array. Each element
-            // of the array is one line of the file.
-            string[] lines = System.IO.File.ReadAllLines(@"C:\TestFolder\WriteText2.txt");
+            // Read each line of the file into a string array. 
+            // Each element of the array is one line of the file.
+            string[] lines = System.IO.File.ReadAllLines(@"C:\TestFolderTXTReader\WriteText2.txt");
 
             // Display the file contents by using a foreach loop.
             System.Console.WriteLine("Contents of WriteLines2.txt = ");
@@ -34,28 +28,32 @@ namespace ConsoleApplicationReadFile
                 Console.WriteLine("\t" + line);
             }
 
-            // Example #1
-            // Read the file as one string.
-            //string testText = System.IO.File.ReadAllText(@"C:\TestFolder\TestRead.txt");
+            // Keep the console window open in debug mode.
+            // Stopgap between simple file -> reading LAS file
+            Console.WriteLine("Press any key to continue to LAS File reading.");
+            System.Console.ReadKey();
 
-            // Display the file contents to the console. Variable text is a string.
+            // Read the LAS in TXT form as one string.
+            // Crashes at this moment because of insuffiecient memory.
+            //string testText = System.IO.File.ReadAllText(@"C:\TestFolderTXTReader\TestRead.txt");
+
+            // Display the file contents to the console.
             //System.Console.WriteLine("Contents of WriteText.txt = {0}", testText);
 
-            // Example #2
-            // Read each line of the file into a string array. Each element
-            // of the array is one line of the file.
-            string[] testLines = System.IO.File.ReadAllLines(@"C:\TestFolder\TestRead2.txt");
+            // Read each line of the file into a string array. 
+            // Each element of the array is one line of the file.TestRead2
+            string[] testLines = System.IO.File.ReadAllLines(@"C:\TestFolderTXTReader\TestRead2.txt");
 
             // Display the file contents by using a foreach loop.
-            System.Console.WriteLine("Contents of WriteLines2.txt = ");
+            System.Console.WriteLine("Contents of TestRead2.txt = ");
             foreach (string line in testLines)
             {
                 // Use a tab to indent each line of the file.
                 Console.WriteLine("\t" + line);
             }
 
-
             // Keep the console window open in debug mode.
+            // Any key press closes the console
             Console.WriteLine("Press any key to exit.");
             System.Console.ReadKey();
         }
